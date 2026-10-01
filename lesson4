@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace oop_c_4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Product milk = new Product(name:"milk", price:190);
+            Product bread = new Product(name: "bread", price: 64);
+            Product cheese = new Product(name: "cheese", price: 370);
+            Cart cart = new Cart();
+            cart.AddProduct(milk);
+            cart.AddProduct(cheese);
+            cart.AddProduct(bread);
+            cart.CalculateTotal();
+        }
+    }
+
+    public class Product
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public Product(string name = "aaa", int price = 0) 
+        {
+            Name = name; Price = price;
+        }
+        public void GetInfo() 
+        {
+            Console.WriteLine($"Name: {Name}, Prce: {Price}");
+        }
+    }
+    class Cart 
+    {
+        public List<Product> Products = new List<Product>();
+        public void AddProduct(Product product) 
+        {
+            Products.Add( product );
+        }
+
+        public void CalculateTotal() 
+        {
+            int totalPrice = 0;
+            foreach (var product in Products) 
+            {
+                totalPrice += product.Price;
+            }
+
+            Console.WriteLine($"Total price: {totalPrice}");
+        }
+    }
+}
