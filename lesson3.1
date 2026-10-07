@@ -1,0 +1,110 @@
+using System;
+
+namespace DeliveryServiceApp
+{
+    abstract class Delivery
+    {
+        protected string name;
+        protected decimal price;
+
+        public Delivery(string name)
+        {
+            this.Name = name;
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (value == null || value.Trim() == "")
+                {
+                    throw new Exception("Ошибка: название доставки не может быть пустым.");
+                }
+
+                if (value.Length > 20)
+                {
+                    throw new Exception("Ошибка: название доставки не может быть длиннее 20 символов.");
+                }
+
+                name = value;
+            }
+        }
+
+        public decimal Price
+        {
+            get
+            {
+                return price;
+            }
+        }
+
+        public abstract void CalculatePrice(decimal basePrice);
+
+        public override string ToString()
+        {
+            return "Доставка: " + name + ", стоимость: " + price + " руб.";
+        }
+    }
+
+    class StandardDelivery : Delivery
+    {
+        public StandardDelivery(string name) : base(name)
+        {
+        }
+
+        public override void CalculatePrice(decimal basePrice)
+        {
+            price = basePrice * 1.0m;
+        }
+    }
+
+    class ExpressDelivery : Delivery
+    {
+        public ExpressDelivery(string name) : base(name)
+        {
+        }
+
+        public override void CalculatePrice(decimal basePrice)
+        {
+            price = basePrice * 2.5m;
+        }
+    }
+
+    class InternationalDelivery : Delivery
+    {
+        public InternationalDelivery(string name) : base(name)
+        {
+        }
+
+        public override void CalculatePrice(decimal basePrice)
+        {
+            price = basePrice * 4.0m;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            decimal basePrice = 20m;
+
+            Delivery delivery1 = new StandardDelivery("Стандартная");
+            Delivery delivery2 = new ExpressDelivery("Экспресс");
+            Delivery delivery3 = new InternationalDelivery("Международная");
+
+            delivery1.CalculatePrice(basePrice);
+            delivery2.CalculatePrice(basePrice);
+            delivery3.CalculatePrice(basePrice);
+
+            Console.WriteLine(delivery1.ToString());
+            Console.WriteLine(delivery2.ToString());
+            Console.WriteLine(delivery3.ToString());
+
+            Console.ReadKey();
+        }
+    }
+}
