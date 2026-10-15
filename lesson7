@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace oop_c_7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            rgb rgb_struct = new rgb(red: 0, green: 222, blue: 0);
+            RGB rgb_class = new RGB(red: 255, green: 0, blue: 0);
+            rgb rgb_struct_2 = new rgb(red: 0, green: 0, blue: 0);
+            RGB rgb_class_2 = new RGB(red: 0, green: 0, blue: 0);
+            rgb_struct_2 = rgb_struct;
+            rgb_class_2=rgb_class;
+            rgb_struct_2.green = 100;
+            rgb_class_2.green = 100;
+
+            Console.WriteLine("Структуры");
+            Console.WriteLine(rgb_struct_2.green);
+            Console.WriteLine(rgb_struct.green);
+            Console.WriteLine("Классы");
+            Console.WriteLine(rgb_class_2.green);
+            Console.WriteLine(rgb_class.green);
+        }
+    }
+
+    public struct rgb 
+    {
+        public int red; public int green; public int blue;
+
+        public rgb(int red, int green, int blue) 
+        {
+            this.red = red; this.green = green; this.blue = blue;
+        }
+    }
+
+    public class RGB
+    {
+        public int red; public int green; public int blue;
+
+        public RGB(int red, int green, int blue) 
+        {
+            this.red = red; this.green = green; this.blue = blue;
+        }
+    }
+}
