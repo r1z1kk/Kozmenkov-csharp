@@ -1,0 +1,7 @@
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\bin\Debug\oop c#9.exe.config
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\bin\Debug\oop c#9.exe
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\bin\Debug\oop c#9.pdb
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\obj\Debug\oop c#9.csproj.AssemblyReference.cache
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\obj\Debug\oop c#9.csproj.CoreCompileInputs.cache
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\obj\Debug\oop c#9.exe
+C:\Users\kozme\OneDrive\колледж\программирование\c#\oop c#9\oop c#9\obj\Debug\oop c#9.pdb
