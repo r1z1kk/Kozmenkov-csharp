@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace oop_c_12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int x = 5, y = 10;
+            Console.WriteLine($"Исходные значения: x = {x}, y = {y}");
+            SwapWithoutRef(x, y);
+            Console.WriteLine($"После SwapWithoutRef: x = {x}, y = {y}");
+            Console.WriteLine();
+            SwapWithRef(ref x, ref y);
+            Console.WriteLine($"После SwapWithRef: x = {x}, y = {y}");
+        }
+        static void SwapWithoutRef(int a, int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine($"Внутри SwapWithoutRef: a = {a}, b = {b}");
+        }
+
+        static void SwapWithRef(ref int a, ref int b) 
+        {
+            int temp = a;
+            a = b; 
+            b = temp;
+            Console.WriteLine($"Внутри SwapWithRef: x = {a}, y = {b}");
+        }
+    }
+}
